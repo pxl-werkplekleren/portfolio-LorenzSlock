@@ -1,0 +1,100 @@
+{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    line-height: 1.6;
+    background-color:  #1f2937;
+
+
+    padding: 2rem 1rem;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+}
+
+body > h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+}
+
+main {
+    width: min(100%, 1000px);
+    margin: 0 auto;
+    display: grid;
+    gap: 1.25rem;
+}
+
+
+.contrainer-info,
+.container-logboek {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 1.25rem;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+}
+
+
+.over-mezelf p {
+    margin: 0;
+}
+
+
+.container-logboek > h2 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.4rem;
+}
+
+/* Lijsten in cellen */
+ul {
+    margin: 0.25rem 0 0;
+    padding-left: 1.25rem;
+}
+
+li {
+    margin: 0.15rem 0;
+}
+
+/* Tabel styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+}
+
+thead th {
+    text-align: left;
+    padding: 0.75rem;
+    background: #f3f4f6;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 700;
+}
+
+tbody td {
+    vertical-align: top;
+    padding: 0.75rem;
+    border-bottom: 1px solid #eef0f3;
+}
+
+/* hover */
+tbody tr:hover {
+    background: #fafafa;
+}
+
+/* Responsive design */
+.container-logboek {
+    overflow-x: auto;
+}
