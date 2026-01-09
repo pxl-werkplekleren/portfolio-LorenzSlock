@@ -8,7 +8,7 @@ body {
     line-height: 1.6;
     background-color:  #1f2937;
 
-
+    color: #e5e7eb; /* ✅ FIX: leesbare tekst op donkere achtergrond */
     padding: 2rem 1rem;
 }
 
@@ -21,12 +21,107 @@ h1 {
     margin-bottom: 0.25rem;
 }
 
+/* Als je nog losse h2’s bovenaan gebruikt */
 body > h2 {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #4b5563;
+    color: #9ca3af; /* ✅ FIX: betere kleur op donker */
     margin-bottom: 1.5rem;
 }
+
+
+/*==========header=======*/
+.profile-header{
+    width: min(100%, 1000px);
+    margin: 0 auto 2rem;
+    padding: 1rem 1.25rem;
+
+    background: #111827;
+    border: 1px solid #2a3647;
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+/* links: foto + tekst samen */
+.profile-left{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+}
+
+/* Foto: rechthoekig maar niet te groot */
+.profile-photo{
+    width: 88px;
+    height: 110px;
+    object-fit: cover;
+
+    border-radius: 10px;
+    border: 1px solid #374151;
+    flex: 0 0 auto;
+}
+
+/* tekstblok compact */
+.profile-text{
+    min-width: 0;
+}
+
+.profile-text h1{
+    margin: 0;
+    font-size: 1.7rem;
+    color: #e5e7eb;
+}
+
+.profile-text .name{
+    margin: 0.25rem 0 0;
+    font-weight: 600;
+    color: #e5e7eb;
+}
+
+.profile-text .opleiding{
+    margin: 0.15rem 0 0;
+    font-size: 0.95rem;
+    color: #9ca3af;
+}
+
+/* rechts: iconen */
+.social-links{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 0 0 auto;
+}
+
+.social-link{
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border: 1px solid #374151;
+
+    transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.social-link img{
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+}
+
+.social-link:hover{
+    background: #1f2937;
+    transform: translateY(-1px);
+}
+
 
 main {
     width: min(100%, 1000px);
@@ -37,19 +132,21 @@ main {
 
 
 .contrainer-info,
-.container-logboek {
+.container-logboek,
+.section {
     background: #ffffff;
+    color: #111827; /* belangrijk! */
+
     border: 1px solid #e5e7eb;
     border-radius: 14px;
     padding: 1.25rem;
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
 }
 
-
+/* Over mezelf */
 .over-mezelf p {
     margin: 0;
 }
-
 
 .container-logboek > h2 {
     margin-top: 0;
@@ -97,4 +194,241 @@ tbody tr:hover {
 /* Responsive design */
 .container-logboek {
     overflow-x: auto;
+}
+
+/* Titel van de section */
+.section > h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+/* Subsection titel */
+.subsection > h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: #111827;
+}
+
+/* Kaart binnen de section */
+.section .card {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.two-columns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* elk item */
+.two-columns > * {
+    flex: 1 1 calc(50% - 0.5rem);
+}
+
+/* Kleinere titels binnen de kolommen */
+.two-columns h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #111827;
+}
+
+/*  Q&A alinea spacing */
+.qa-text p {
+    margin: 0 0 0.75rem;
+}
+.qa-text p:last-child {
+    margin-bottom: 0;
+}
+.qa-block h4 {
+    margin-bottom: 0.5rem;
+}
+
+
+/* OLR TABEL */
+.table-wrap {
+    overflow-x: auto;
+}
+
+.olr-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
+    min-width: 760px;
+}
+
+.olr-table th {
+    text-align: left;
+    padding: 0.85rem;
+    background: #f3f4f6;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 700;
+    color: #111827;
+}
+
+.olr-table td {
+    vertical-align: top;
+    padding: 0.85rem;
+    border-bottom: 1px solid #eef0f3;
+    color: #111827;
+}
+
+.olr-table td:first-child {
+    width: 120px;
+    font-weight: 700;
+    color: #374151;
+    white-space: nowrap;
+}
+/* OLR reflectieblok (binnen de tabelcel)*/
+.olr-reflection {
+    margin-top: 0.9rem;
+}
+
+.olr-reflection h4 {
+    margin: 0 0 0.75rem;
+    font-size: 1.05rem;
+    color: #111827;
+}
+
+.reflection-item h5 {
+    margin: 0 0 0.35rem;
+    font-size: 0.95rem;
+    color: #111827;
+}
+
+.reflection-item p {
+    margin: 0;
+    color: #374151;
+}
+
+
+.placeholder {
+    color: #6b7280;
+
+}
+
+
+
+.olr-table .role-row td {
+    background: #ffffff;
+    font-weight: 800;
+    color: #111827;
+    border-top: 1px solid #e5e7eb;
+}
+
+
+.olr-table tbody tr:hover td {
+    background: #fafafa;
+}
+.role-reflection h4{
+    margin: 0 0 0.75rem;
+    font-size: 1.05rem;
+}
+
+.reflection-item h5{
+    margin: 0 0 0.35rem;
+    font-size: 0.95rem;
+}
+
+.reflection-item p{
+    margin: 0;
+    color: #374151;
+}
+.activities{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.activity-card h3{
+    margin: 0 0 0.75rem;
+    font-size: 1.1rem;
+    color: #111827;
+}
+
+.activity-list{
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.activity-list li{
+    margin: 0 0 0.85rem;
+}
+
+.activity-list li:last-child{
+    margin-bottom: 0;
+}
+
+.activity-list p{
+    margin: 0.35rem 0 0;
+    color: #374151;
+}
+
+
+
+.alpha-list {
+    margin: 0.5rem 0 0.5rem 1.25rem;
+    padding-left: 1.25rem;
+}
+.alpha-list li {
+    margin: 0.15rem 0;
+}
+.aim-grid{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.aim-card h3{
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Kernkwaliteiten: 2 blokken naast elkaar op desktop, onder elkaar op mobiel */
+.kern-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.kern-card{
+    flex: 1 1 calc(50% - 0.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.kern-card h3{
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* X-factor: cards onder elkaar  */
+.xf-wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.xf-card h3{
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 700px){
+    .profile-header{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .social-links{
+        align-self: flex-end;
+    }
+
+    .two-columns{
+        grid-template-columns: 1fr;
+    }
 }
